@@ -57,8 +57,11 @@ const CrosswordContainer = () => {
   return (
     <>
       <div className="w-full max-w-6xl mx-auto p-10 my-5">
-        <Timer onTimeUp={handleTimeUp} />
-        <div className="crossword-container flex flex-col md:flex-row flex-start gap-16 ">
+        <h1 className="text-3xl font-bold text-center mb-4">
+          NYT Mini Crossword
+        </h1>
+        <Timer onTimeUp={handleTimeUp} isCrosswordCorrect={isCrosswordCorrect}/>
+        <div id="crossword" className="crossword-container flex flex-col md:flex-row flex-start gap-16 ">
           <Crossword
             ref={crosswordRef}
             data={puzzleData2}

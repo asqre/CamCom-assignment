@@ -2,10 +2,28 @@ import React, { useState, useEffect } from "react";
 import { FaCirclePlay } from "react-icons/fa6";
 import { FaPauseCircle } from "react-icons/fa";
 
-const Timer = ({ onTimeUp }) => {
-  const initialTime=5;
+const Timer = ({ onTimeUp, isCrosswordCorrect }) => {
+  const initialTime = 120;
   const [time, setTime] = useState(initialTime);
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(true);
+
+  useEffect(() => {
+    const elem = document.getElementById("crossword");
+    if (!isRunning && !isCrosswordCorrect) {
+      elem.style.filter = "blur(5px)";
+      elem.style.pointerEvents = "none";
+    } else {
+      elem.style.filter = "blur(0px)";
+      elem.style.pointerEvents = "auto";
+    }
+  }, [isRunning, time]);
+
+  useEffect(() => {
+    if (isCrosswordCorrect) {
+      setIsRunning(false);
+      setTime(initialTime);
+    }
+  }, [isCrosswordCorrect]);
 
   useEffect(() => {
     let timerInterval;
@@ -17,7 +35,7 @@ const Timer = ({ onTimeUp }) => {
     } else if (time === 0) {
       setIsRunning(false);
       setTime(initialTime);
-      onTimeUp(); 
+      onTimeUp();
     }
 
     return () => {
