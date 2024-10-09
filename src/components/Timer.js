@@ -3,7 +3,7 @@ import { FaCirclePlay } from "react-icons/fa6";
 import { FaPauseCircle } from "react-icons/fa";
 
 const Timer = ({ onTimeUp }) => {
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(2);
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ const Timer = ({ onTimeUp }) => {
       }, 1000);
     } else if (time === 0) {
       setIsRunning(false);
+      setTime(2);
       onTimeUp(); 
     }
 
