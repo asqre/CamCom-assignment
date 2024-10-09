@@ -24,3 +24,5 @@ yarn-error.log*
 
 README.md
 yarn.lock
+
+package-lock.json

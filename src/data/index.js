@@ -1,34 +1,60 @@
-export const puzzleData = {
-    grid: [
-      ['', '', '1', '2', '3'],
-      ['4', '', '5', '', ''],
-      ['6', '7', '', '', ''],
-      ['', '', '', '8', ''],
-      ['9', '10', '', '', ''],
-    ],
-    clues: {
-      across: [
-        { number: 1, clue: "Scoundrel" },
-        { number: 4, clue: "Imitate" },
-        { number: 5, clue: "Oolong, for one" },
-        { number: 6, clue: "Chatter" },
-        { number: 8, clue: "Yoko ___" },
-        { number: 9, clue: "Bro's sibling" },
-        { number: 10, clue: "Beatle bride" }
-      ],
-      down: [
-        { number: 1, clue: "Resting place" },
-        { number: 2, clue: "Pinch" },
-        { number: 3, clue: "Chew the fat" },
-        { number: 5, clue: "Skirt edge" },
-        { number: 7, clue: "Pig's digs" }
-      ],
-      solution: [
-        ['', '', 'R', 'A', 'T'],
-        ['A', '', 'T', '', ''],
-        ['P', 'E', '', '', ''],
-        ['', '', '', 'O', ''],
-        ['S', 'I', '', '', ''],
-      ],
+export const puzzleData2 = {
+  across: {
+    1: {
+      clue: "Capital of France",
+      answer: "PARIS",
+      row: 0,
+      col: 0
+    },
+    3: {
+      clue: "Largest planet in our solar system",
+      answer: "JUPITER",
+      row: 2,
+      col: 0
+    },
+    5: {
+      clue: "Currency of Japan",
+      answer: "YEN",
+      row: 4,
+      col: 0
+    },
+    6: {
+      clue: "Capital of Italy",
+      answer: "ROME",
+      row: 5,
+      col: 0
+    },
+    7: {
+      clue: "Seventh planet from the sun",
+      answer: "URANUS",
+      row: 6,
+      col: 0
+    },
+    9: {
+      clue: "Largest ocean on Earth",
+      answer: "PACIFIC",
+      row: 8,
+      col: 0
     }
-  };
+  },
+  down: {
+    2: {
+      clue: "Chemical symbol for gold",
+      answer: "AU",
+      row: 0,
+      col: 1
+    },
+    4: {
+      clue: "First name of the painter Van Gogh",
+      answer: "VINCENT",
+      row: 1,
+      col: 3
+    },
+    8: {
+      clue: "Closest star to Earth",
+      answer: "SUN",
+      row: 1,
+      col: 7
+    }
+  }
+};
