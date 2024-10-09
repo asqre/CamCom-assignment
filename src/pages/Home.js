@@ -10,6 +10,7 @@ const CrosswordContainer = () => {
   const [isCrosswordCorrect, setIsCrosswordCorrect] = useState(false);
   const crosswordRef = useRef(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isAnswerVisible, setIsAnswerVisible] = useState(false);
 
   const handleCloseModal = () => {
     setIsModalVisible(false);
@@ -45,9 +46,11 @@ const CrosswordContainer = () => {
   const handleReset = () => {
     crosswordRef.current?.reset();
     setIsCrosswordCorrect(false);
+    setIsAnswerVisible(false);
   };
 
   const handleFillAllAnswers = () => {
+    setIsAnswerVisible(true);
     crosswordRef.current?.fillAllAnswers();
   };
 
@@ -60,7 +63,7 @@ const CrosswordContainer = () => {
             ref={crosswordRef}
             data={puzzleData2}
             theme={theme}
-            onCrosswordCorrect={handleCrosswordCorrect}
+            onCrosswordCorrect={!isAnswerVisible && handleCrosswordCorrect}
             onCellChange={(cell) => console.log("clue no", cell)}
             onClueSelected={(clue, number) =>
               console.log("Clue selected", clue, number)
